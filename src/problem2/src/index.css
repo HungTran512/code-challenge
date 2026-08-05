@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-ledger-bg: #0b1f24;
+  --color-ledger-bg-deep: #071416;
+  --color-ledger-panel: #122a30;
+  --color-ledger-panel-2: #0e262c;
+  --color-ledger-border: #1e3c43;
+  --color-ledger-mint: #7ee8b4;
+  --color-ledger-muted: #8aa4ab;
+  --color-ledger-text: #e8f4f2;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background: var(--color-ledger-bg-deep);
+  color: var(--color-ledger-text);
+}
+
+.ledger-backdrop {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(126, 232, 180, 0.08), transparent 70%),
+    radial-gradient(120% 120% at 50% 50%, var(--color-ledger-bg) 0%, var(--color-ledger-bg-deep) 100%);
+}
+
+@keyframes ledger-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ledger-card-enter {
+  animation: ledger-card-enter 0.45s ease-out both;
+}
